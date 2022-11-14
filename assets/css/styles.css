@@ -1,2 +1,23 @@
 
 /* css */
+
+.header {
+  background-color: lightBlue;
+  text-align: center;
+  color: black;
+  padding: 2% 0;
+}
+
+.mainBody {
+  padding: 2% 15%;
+}
+
+.comment {
+  border: solid 1px gray;
+  border-radius: 25px;
+}
+
+.comment > p {
+  padding: 2%;
+  font-family:monospace;
+}
