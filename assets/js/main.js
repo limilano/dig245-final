@@ -8,7 +8,6 @@ const sentenceStarters = ['I hate', 'I hate it when', 'I dislike', 'You are wron
 async function query(data) {
 
   let comment;
-  let rating;
 
     const response = await fetch(
         "https://api-inference.huggingface.co/models/CommunityLM/republican-twitter-gpt2",
@@ -20,7 +19,9 @@ async function query(data) {
     );
 
     comment = await response.json();
-    return comment[0].generated_text;
+    comment = comment[0].generated_text;
+    $("#comment").text(comment);
+    return comment;
 }
 
 // query({inputs:sentenceStarters[0]}).then((response) => {
