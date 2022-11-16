@@ -9,6 +9,8 @@ const sentenceStarters = ['I hate your', 'I hate it when', 'You are so stupid',
 
 let comment;
 let score;
+let inputNegativity;
+
 
 async function query(data) {
 
@@ -29,7 +31,7 @@ async function query(data) {
   score = await rate({
     inputs: comment
   });
-  $("#score").text("Score: " + score);
+  // $("#score").text("Score: " + score);
   return comment;
 }
 
@@ -51,14 +53,43 @@ async function rate(data) {
 }
 
 $(document).ready(function() {
-  $("button").click(async function() {
+  $("#newComment").click(async function() {
     // await response
     let random = Math.floor(Math.random() * sentenceStarters.length);
     comment = await query({
       inputs: sentenceStarters[random]
     });
-
+    $("#form1").show();
+    $("#responseText").hide();
+    $("#newComment").hide();
     // because we use "await" ^ we know that data was returned successfully
   });
-  $("button").trigger("click");
+
+  $("#newComment").trigger("click");
+});
+
+$("#form1").submit(function(e) {
+  e.preventDefault();
+  inputNegativity = $("#negativityInput").val();
+  console.log(inputNegativity);
+
+  $("#form1").hide();
+  $("#responseText").show();
+  $("#responseText").text("The API gave this tweet a negativity score of " + score + ", which has a difference of " +
+  (Math.abs(score-inputNegativity)) + " from your perceived negativity. You have the choice to keep or delete this tweet:");
+  $("#form2").show();
+});
+
+$("#keepBtn").click(async function() {
+  $("#form2").hide();
+  console.log("keep");
+  $("#responseText").text("You have decided to keep this tweet");
+  $("#newComment").show();
+});
+
+$("#deleteBtn").click(async function() {
+  $("#form2").hide();
+  console.log("delete");
+  $("#responseText").text("You have decided to delete this tweet");
+  $("#newComment").show();
 });

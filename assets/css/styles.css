@@ -24,3 +24,7 @@
 .pad {
   padding: 2% 0;
 }
+
+#negativityInput {
+  width: 50%;
+}

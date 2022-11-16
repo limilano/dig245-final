@@ -21,15 +21,25 @@
 			<div class="comment pad" >
 				<p id="comment"></p>
 			</div>
-			<div class="pad">
-				<button class="btn btn-outline-primary">get new comment</button>
-			</div>
-			<p id="score"></p>
-			<form>
-				<label for="negativityInput" class="form-label">Negativity</label>
-				<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput">
+
+			<form id="form1">
+				<label for="negativityInput" class="form-label" id ="label1">Negativity Level</label>
+				<br>
+				<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="this.nextElementSibling.value = this.value">
+				<output>50</output>
+				<br>
 				<input type="submit" class="btn btn-outline-primary">
 			</form>
+
+			<p id="responseText" style="display:none"></p>
+
+			<div id="form2" style="display:none">
+				<button type="button" class="btn btn-success" id="keepBtn">Keep</button>
+				<button type="button" class="btn btn-danger" id="deleteBtn">Delete</button>
+			</div>
+
+			<button class="btn btn-outline-primary" id="newComment" style="display:none">get new tweet</button>
+
 		</div>
 	</div>
 
