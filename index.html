@@ -23,7 +23,7 @@
 			</div>
 
 			<form id="form1">
-				<label for="negativityInput" class="form-label" id ="label1">Negativity Level</label>
+				<label for="negativityInput" class="form-label pad" id ="label1">Negativity Level</label>
 				<br>
 				<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="this.nextElementSibling.value = this.value">
 				<output>50</output>
@@ -31,7 +31,7 @@
 				<input type="submit" class="btn btn-outline-primary">
 			</form>
 
-			<p id="responseText" style="display:none"></p>
+			<p class="pad" id="responseText" style="display:none"></p>
 
 			<div id="form2" style="display:none">
 				<button type="button" class="btn btn-success" id="keepBtn">Keep</button>

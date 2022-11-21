@@ -25,13 +25,20 @@ async function query(data) {
   );
 
   comment = await response.json();
-  comment = comment[0].generated_text;
+
+  if(response.ok) {
+    comment = comment[0].generated_text;
+    console.log('ok');
+  } else {
+    comment = "Something went wrong, please reload the page";
+  }
 
   $("#comment").text(comment);
+
   score = await rate({
     inputs: comment
   });
-  // $("#score").text("Score: " + score);
+
   return comment;
 }
 
@@ -59,6 +66,7 @@ $(document).ready(function() {
     comment = await query({
       inputs: sentenceStarters[random]
     });
+
     $("#form1").show();
     $("#responseText").hide();
     $("#newComment").hide();
