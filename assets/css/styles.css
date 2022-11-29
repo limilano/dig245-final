@@ -1,29 +1,69 @@
 
 /* css */
+@font-face {
+    font-family: GTamerica;
+    src: url(assets/img/GT America Regular.ttf);
+}
+
+* {
+  font-family: GTamerica;
+}
+
+.gray {
+  color: #61666C;
+  font-weight: bold;
+  font-size: 20px;
+  vertical-align: top;
+  padding-left: 2%;
+}
+
+.TwtBlue {
+  color: #55ACEF;
+  font-size: 45px;
+  padding: 0 2%;
+}
 
 .header {
-  background-color: lightBlue;
+  background-color: #55ACEF;
   text-align: center;
-  color: black;
+  color: white;
+  padding: 2% 0;
 }
 
 .mainBody {
   padding: 2% 15%;
+  font-size: 17px;
 }
 
 .comment {
-  border: solid 1px gray;
-  border-radius: 25px;
-}
-
-.comment > p {
-  font-family:monospace;
-  padding: 0 2%;
+  border: solid 1px #E7ECF0;
 }
 
 .pad {
-  padding: 2% 0;
+  padding: 2% 3%;
 }
+
+.screenname {
+  font-weight: bold;
+  font-size: 20px;
+  vertical-align: top;
+}
+
+.tweet {
+  padding-top: 1%;
+}
+
+div.metrics {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+div.metrics span {
+    display: table-cell;
+    text-align: left;
+}
+
+
 
 #negativityInput {
   width: 50%;
