@@ -91,13 +91,49 @@ $("#form1").submit(function(e) {
 $("#keepBtn").click(async function() {
   $("#form2").hide();
   console.log("keep");
-  $("#responseText").text("You have decided to keep this tweet");
+
+  if(score > 80) {
+    $("#responseText").text(`While you have decided to keep this tweet, the API would have flagged this tweet for review
+    and potential deletion.`);
+  } else {
+    $("#responseText").text(`You have decided to keep this tweet, the API has also determined that this tweet
+      does not contain highly negative sentiment.`);
+  }
+
   $("#newComment").show();
 });
 
 $("#deleteBtn").click(async function() {
   $("#form2").hide();
   console.log("delete");
-  $("#responseText").text("You have decided to delete this tweet");
+
+  if(score < 80) {
+    $("#responseText").text(`While you have decided to delete this tweet, the API would not have flagged this particular tweet,
+      though it may have incorrectly assessed the sentiment.`);
+  } else {
+    $("#responseText").text(`You have decided to delete this tweet, the API has also determined that this tweet
+       contains highly negative sentiment.`);
+  }
+
   $("#newComment").show();
 });
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      $("#arrow").removeClass("fa-angle-up");
+      $("#arrow").addClass("fa-angle-down");
+    } else {
+      content.style.display = "block";
+      $("#arrow").removeClass("fa-angle-down");
+      $("#arrow").addClass("fa-angle-up");
+    }
+
+  });
+}

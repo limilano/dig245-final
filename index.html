@@ -13,42 +13,51 @@
 
 <body>
 	<div class="header">
-		<h1>Social Mediator</h1>
+		<h2>Social Mediator</h2>
 	</div>
 
-	<div class="mainBody">
-		<p class="description">What's the difference between a human's perception of comments made online versus
-			an API's? Below you will be able to rate the negativity of tweets and your rating will be compared to an API's, from
-			there you can decide whether or not you would delete this tweet and see what the API would do.</p>
+		<div class="row">
+			<div class="col align-self-start"></div>
+			<div class="col col-lg-6 col-md-8 col-sm-10 align-self-center">
+				<p class="description">What's the difference between a human's perception of comments made online versus
+					an API's? Below you will be able to rate the negativity of tweets and your rating will be compared to an API's, from
+					there you can decide whether or not you would delete this tweet and see what the API would do.</p>
+			</div>
+			<div class="col align-self-end"></div>
+		</div>
 
-		<div class="comment pad">
-			<div class="row justify-content-start">
-				<div class = "col-auto"><i class="fa-brands fa-twitter TwtBlue"></i></div>
-				<div class = "col"><span class="screenname">Twitter User</span><span class="gray">@username</span>
-					<br>
-					<p id="comment" class="tweet"></p>
+		<div class="row">
+			<div class="col align-self-start"></div>
+			<div class="col col-lg-8 col-md-10 col-sm-10 align-self-center">
+				<div class="comment pad">
+					<div class="row justify-content-start">
+						<div class="col-auto"><i class="fa-brands fa-twitter TwtBlue"></i></div>
+						<div id="tweetHeader" class="col"><span class="screenname">Twitter User</span><span class="gray screenname">@username</span>
+							<br>
+							<p id="comment" class="tweet"></p>
 
-					<div class="metrics">
-    				<span><i class="fa-regular fa-comment"></i> 5</span>
-    				<span><i class="fa-solid fa-retweet"></i> 6</span>
-    				<span><i class="fa-regular fa-heart"></i> 25</span>
-						<span><i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></span>
+							<div class="metrics">
+								<span><i class="fa-regular fa-comment"></i> 5</span>
+								<span><i class="fa-solid fa-retweet"></i> 6</span>
+								<span><i class="fa-regular fa-heart"></i> 25</span>
+								<span><i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-
+			<div class="col align-self-end"></div>
 		</div>
 
 		<div class="center">
 			<form id="form1">
 				<label for="negativityInput" class="form-label pad" id="label1">Negativity Level</label>
 				<br>
-				<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput"
-				oninput="this.nextElementSibling.nextElementSibling.value = this.value">
+				<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="this.nextElementSibling.nextElementSibling.value = this.value">
 				<br>
 				<output>50</output>
 				<br>
-				<div class="pad"><input type="submit" class="btn btn-outline-primary"></div>
+				<div class="pad"><input type="submit" class="btn btn-primary"></div>
 			</form>
 		</div>
 
@@ -60,9 +69,24 @@
 			<span><button type="button" class="btn btn-danger" id="deleteBtn">Delete</button></span>
 		</div>
 
-		<button class="btn btn-outline-primary" id="newComment" style="display:none">get new tweet</button>
+		<div class="center">
+			<button class="btn btn-primary" id="newComment" style="display:none">get new tweet</button>
+		</div>
 
-	</div>
+		<br>
+		<br>
+		<div class="center">
+			<button type="button" class="collapsible btn">See more <i id="arrow" class="fa-solid fa-angle-down"></i></button>
+			<div class="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+					labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+					nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+					culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+
+
 
 
 
