@@ -17,10 +17,18 @@
   padding-left: 2%;
 }
 
+.center {
+  text-align: center;
+}
+
 .TwtBlue {
   color: #55ACEF;
   font-size: 45px;
   padding: 0 2%;
+}
+
+.responses {
+  padding: 2% 0;
 }
 
 .header {
@@ -63,7 +71,10 @@ div.metrics span {
     text-align: left;
 }
 
-
+#form2.metrics span {
+    display: table-cell;
+    text-align: center;
+}
 
 #negativityInput {
   width: 50%;

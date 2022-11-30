@@ -39,20 +39,25 @@
 
 		</div>
 
-		<form id="form1">
-			<label for="negativityInput" class="form-label pad" id="label1">Negativity Level</label>
-			<br>
-			<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="this.nextElementSibling.value = this.value">
-			<output>50</output>
-			<br>
-			<input type="submit" class="btn btn-outline-primary">
-		</form>
+		<div class="center">
+			<form id="form1">
+				<label for="negativityInput" class="form-label pad" id="label1">Negativity Level</label>
+				<br>
+				<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput"
+				oninput="this.nextElementSibling.nextElementSibling.value = this.value">
+				<br>
+				<output>50</output>
+				<br>
+				<div class="pad"><input type="submit" class="btn btn-outline-primary"></div>
+			</form>
+		</div>
 
-		<p class="pad" id="responseText" style="display:none"></p>
 
-		<div id="form2" style="display:none">
-			<button type="button" class="btn btn-success" id="keepBtn">Keep</button>
-			<button type="button" class="btn btn-danger" id="deleteBtn">Delete</button>
+		<p class="responses" id="responseText" style="display:none"></p>
+
+		<div id="form2" style="display:none" class="metrics">
+			<span><button type="button" class="btn btn-success" id="keepBtn">Keep</button></span>
+			<span><button type="button" class="btn btn-danger" id="deleteBtn">Delete</button></span>
 		</div>
 
 		<button class="btn btn-outline-primary" id="newComment" style="display:none">get new tweet</button>
