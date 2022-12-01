@@ -7,6 +7,12 @@ const sentenceStarters = ['I hate your', 'I hate it when', 'You are so stupid',
   "You suck at your job, you should just quit", "Why keep trying, you're not even good"
 ];
 
+const selectedComments = [`@USER You should be ashamed of your performance. A child could have done it better.
+  What does that say about your industry? That you're all worthless idiots?`, `How long will it be before you understand
+  that you just need to give up. This just isn't for you. @USER`, `@USER Oh wow you're uglier than I expected.
+  Shouldn't have posted this pic in the first place LOL`, `This would have been great two weeks ago, when I still needed it.
+  I don't understand why they keep hiring all these incompetent employees, it's like they're not even a multi-billion dollar industy.`];
+
 let comment;
 let score;
 let inputNegativity;
@@ -30,7 +36,7 @@ async function query(data) {
     comment = comment[0].generated_text;
     console.log('ok');
   } else {
-    comment = "Something went wrong, please reload the page";
+    comment = selectedComments[Math.floor(Math.random() * selectedComments.length)];
   }
 
   $("#comment").text(comment);
