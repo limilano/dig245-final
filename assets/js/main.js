@@ -67,15 +67,16 @@ async function rate(data) {
 
 $(document).ready(function() {
   $("#newComment").click(async function() {
+    $("#form1").show();
+    $("#responseText").hide();
+    $("#newComment").hide();
     // await response
     let random = Math.floor(Math.random() * sentenceStarters.length);
     comment = await query({
       inputs: sentenceStarters[random]
     });
 
-    $("#form1").show();
-    $("#responseText").hide();
-    $("#newComment").hide();
+
     // because we use "await" ^ we know that data was returned successfully
   });
 
