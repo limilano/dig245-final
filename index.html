@@ -12,22 +12,21 @@
 </head>
 
 <body>
-	<div class="header">
-		<h2>Social Mediator</h2>
-	</div>
+	<div class="container-fluid">
 
-		<div class="row">
-			<div class="col align-self-start"></div>
+		<div class="header">
+			<h2>Social Mediator</h2>
+		</div>
+
+		<div class="row justify-content-center" id="introDescription">
 			<div class="col col-lg-6 col-md-8 col-sm-10 align-self-center">
 				<p class="description">What's the difference between a human's perception of comments made online versus
 					an API's? Below you will be able to rate the negativity of tweets and your rating will be compared to an API's, from
 					there you can decide whether or not you would delete this tweet and see what the API would do.</p>
 			</div>
-			<div class="col align-self-end"></div>
 		</div>
 
-		<div class="row">
-			<div class="col align-self-start"></div>
+		<div class="row justify-content-center" id="fakeTweet">
 			<div class="col col-lg-8 col-md-10 col-sm-10 align-self-center">
 				<div class="comment pad">
 					<div class="row justify-content-start">
@@ -46,47 +45,52 @@
 					</div>
 				</div>
 			</div>
-			<div class="col align-self-end"></div>
 		</div>
 
-		<div class="center">
-			<form id="form1">
-				<label for="negativityInput" class="form-label pad" id="label1">Negativity Level</label>
-				<br>
-				<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="this.nextElementSibling.nextElementSibling.value = this.value">
-				<br>
-				<output>50</output>
-				<br>
-				<div class="pad"><input type="submit" class="btn btn-primary"></div>
-			</form>
-		</div>
+		<div class="row justify-content-center" id="inputsAll">
+			<div class="col col-lg-6 col-md-8 col-sm-10 align-self-center">
+				<div class="center">
+					<form id="form1">
+						<label for="negativityInput" class="form-label pad" id="label1">Negativity Level</label>
+						<br>
+						<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="this.nextElementSibling.nextElementSibling.value = this.value">
+						<br>
+						<output>50</output>
+						<br>
+						<div class="pad"><input type="submit" class="btn btn-primary"></div>
+					</form>
+				</div>
 
 
-		<p class="responses" id="responseText" style="display:none"></p>
+				<p class="responses" id="responseText" style="display:none"></p>
 
-		<div id="form2" style="display:none" class="metrics">
-			<span><button type="button" class="btn btn-success" id="keepBtn">Keep</button></span>
-			<span><button type="button" class="btn btn-danger" id="deleteBtn">Delete</button></span>
-		</div>
+				<div id="form2" style="display:none" class="metrics">
+					<span><button type="button" class="btn btn-success" id="keepBtn">Keep</button></span>
+					<span><button type="button" class="btn btn-danger" id="deleteBtn">Delete</button></span>
+				</div>
 
-		<div class="center">
-			<button class="btn btn-primary" id="newComment" style="display:none">get new tweet</button>
-		</div>
-
-		<br>
-		<br>
-		<div class="center">
-			<button type="button" class="collapsible btn">See more <i id="arrow" class="fa-solid fa-angle-down"></i></button>
-			<div class="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-					labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-					nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-					culpa qui officia deserunt mollit anim id est laborum.</p>
+				<div class="center">
+					<button class="btn btn-primary" id="newComment" style="display:none">get new tweet</button>
+				</div>
 			</div>
 		</div>
 
+		<div class="row justify-content-center" id="seeMore">
+			<div class="col col-lg-6 col-md-8 col-sm-10 align-self-center">
+				<div class="center">
+					<button type="button" class="collapsible btn">See more <i id="arrow" class="fa-solid fa-angle-down"></i></button>
+					<div class="content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+							esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+							culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
+	</div>
 
 
 

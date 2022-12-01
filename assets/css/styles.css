@@ -9,8 +9,18 @@
   font-family: GTamerica;
 }
 
+.container-fluid {
+  width: 100%;
+   margin: 0 !important;
+   padding: 0 !important;
+}
+
 .col {
   padding: 2% 0;
+}
+
+.row {
+  width: 100%;
 }
 
 .gray {
