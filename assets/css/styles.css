@@ -2,7 +2,7 @@
 /* css */
 @font-face {
     font-family: GTamerica;
-    src: url(assets/img/GT America Regular.ttf);
+    src: url("assets/img/GT America Regular.ttf");
 }
 
 * {
@@ -55,7 +55,7 @@ h2 {
   font-size: 3vw;
 }
 
-p{
+p, .textFixer{
   font-size: 1.5vw;
   margin:0;
 }

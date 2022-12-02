@@ -35,10 +35,10 @@
 							<div class="screenname">Twitter User <span class="gray screenname">@USER</span></div>
 							<p id="comment" class="tweet"></p>
 							<div class="metrics">
-								<span><p><i class="fa-regular fa-comment"></i> 5</p></span>
-								<span><p><i class="fa-solid fa-retweet"></i> 6</p></span>
-								<span><p><i class="fa-regular fa-heart"></i> 25</p></span>
-								<span><p><i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></p></span>
+								<span class="textFixer"><i class="fa-regular fa-comment"></i> 5</span>
+								<span class="textFixer"><i class="fa-solid fa-retweet"></i> 6</span>
+								<span class="textFixer"><i class="fa-regular fa-heart"></i> 25</span>
+								<span class="textFixer"><i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></span>
 							</div>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 			<div class="col col-6 align-self-center">
 				<div class="center">
 					<form id="form1">
-						<label for="negativityInput" class="form-label" id="label1"><p>Negativity Level</p></label>
+						<label for="negativityInput" class="form-label textFixer" id="label1">Negativity Level</label>
 						<br>
 						<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="document.getElementById('output').value = this.value">
 						<div><output id="output" style="font-size:1.5vw">50</output></div>
@@ -62,12 +62,12 @@
 				<p class="responses" id="responseText" style="display:none"></p>
 
 				<div id="form2" style="display:none" class="metrics">
-					<span><button type="button" class="btn btn-success btn-block" id="keepBtn"><p>Keep</p></button></span>
-					<span><button type="button" class="btn btn-danger btn-block" id="deleteBtn"><p>Delete</p></button></span>
+					<span><button type="button" class="btn btn-success btn-block textFixer" id="keepBtn">Keep</button></span>
+					<span><button type="button" class="btn btn-danger btn-block textFixer" id="deleteBtn">Delete</button></span>
 				</div>
 
 				<div class="center">
-					<button class="btn btn-primary" id="newComment" style="display:none"><p>next</p></button>
+					<button class="btn btn-primary textFixer" id="newComment" style="display:none">next</button>
 				</div>
 			</div>
 		</div>
@@ -75,7 +75,7 @@
 		<div class="row justify-content-center" id="seeMore">
 			<div class="col col-6 align-self-center">
 				<div class="center">
-					<button type="button" class="collapsible btn btn-block"><p>See more <i id="arrow" class="fa-solid fa-angle-down"></i><p></button>
+					<button type="button" class="collapsible btn btn-block textFixer">See more <i id="arrow" class="fa-solid fa-angle-down"></i></button>
 					<div class="content">
 						<h4 class="center">About</h4>
 						<p>I originally set out to make a website to illustrate the potential harm of social media.
