@@ -19,27 +19,26 @@
 		</div>
 
 		<div class="row justify-content-center" id="introDescription">
-			<div class="col col-lg-6 col-md-8 col-sm-10 align-self-center">
-				<p class="description">What's the difference between a human's perception of comments made online versus
+			<div class="col col-6 align-self-center">
+				<p>What's the difference between a human's perception of comments made online versus
 					an API's? Below you will be able to rate the negativity of tweets and your rating will be compared to an API's, from
 					there you can decide whether or not you would delete this tweet and see what the API would do.</p>
 			</div>
 		</div>
 
 		<div class="row justify-content-center" id="fakeTweet">
-			<div class="col col-lg-8 col-md-10 col-sm-10 align-self-center">
+			<div class="col col-8 align-self-center">
 				<div class="comment pad">
 					<div class="row justify-content-start">
 						<div class="col-auto"><i class="fa-brands fa-twitter TwtBlue"></i></div>
-						<div id="tweetHeader" class="col"><span class="screenname">Twitter User</span><span class="gray screenname">@username</span>
-							<br>
+						<div id="tweetHeader" class="col">
+							<span class="screenname">Twitter User</span><span class="gray screenname">@username</span>
 							<p id="comment" class="tweet"></p>
-
 							<div class="metrics">
-								<span><i class="fa-regular fa-comment"></i> 5</span>
-								<span><i class="fa-solid fa-retweet"></i> 6</span>
-								<span><i class="fa-regular fa-heart"></i> 25</span>
-								<span><i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></span>
+								<span><p><i class="fa-regular fa-comment"></i> 5</p></span>
+								<span><p><i class="fa-solid fa-retweet"></i> 6</p></span>
+								<span><p><i class="fa-regular fa-heart"></i> 25</p></span>
+								<span><p><i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></p></span>
 							</div>
 						</div>
 					</div>
@@ -48,16 +47,14 @@
 		</div>
 
 		<div class="row justify-content-center" id="inputsAll">
-			<div class="col col-lg-6 col-md-8 col-sm-10 align-self-center">
+			<div class="col col-6 align-self-center">
 				<div class="center">
 					<form id="form1">
-						<label for="negativityInput" class="form-label pad" id="label1">Negativity Level</label>
+						<label for="negativityInput" class="form-label" id="label1"><p>Negativity Level</p></label>
 						<br>
-						<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="this.nextElementSibling.nextElementSibling.value = this.value">
-						<br>
-						<output>50</output>
-						<br>
-						<div class="pad"><input type="submit" class="btn btn-primary"></div>
+						<input type="range" class="form-range" min="0" max="100" step="1" id="negativityInput" oninput="document.getElementById('output').value = this.value">
+						<div><output id="output" style="font-size:1.5vw">50</output></div>
+						<div class="pad"><input type="submit" class="btn btn-primary btn-block" style="font-size:1.5vw;"></div>
 					</form>
 				</div>
 
@@ -65,26 +62,48 @@
 				<p class="responses" id="responseText" style="display:none"></p>
 
 				<div id="form2" style="display:none" class="metrics">
-					<span><button type="button" class="btn btn-success" id="keepBtn">Keep</button></span>
-					<span><button type="button" class="btn btn-danger" id="deleteBtn">Delete</button></span>
+					<span><button type="button" class="btn btn-success btn-block" id="keepBtn"><p>Keep</p></button></span>
+					<span><button type="button" class="btn btn-danger btn-block" id="deleteBtn"><p>Delete</p></button></span>
 				</div>
 
 				<div class="center">
-					<button class="btn btn-primary" id="newComment" style="display:none">get new tweet</button>
+					<button class="btn btn-primary" id="newComment" style="display:none"><p>next</p></button>
 				</div>
 			</div>
 		</div>
 
 		<div class="row justify-content-center" id="seeMore">
-			<div class="col col-lg-6 col-md-8 col-sm-10 align-self-center">
+			<div class="col col-6 align-self-center">
 				<div class="center">
-					<button type="button" class="collapsible btn">See more <i id="arrow" class="fa-solid fa-angle-down"></i></button>
+					<button type="button" class="collapsible btn btn-block"><p>See more <i id="arrow" class="fa-solid fa-angle-down"></i><p></button>
 					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-							esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum.</p>
+						<h4 class="center">About</h4>
+						<p>I originally set out to make a website to illustrate the potential harm of social media.
+							My biggest challenge was finding a list of hate comments that were general enough to affect
+							almost anyone reading it. A lot of comments you find in data sets are the logs of chatbots or are found in
+							papers that are very specific and sometimes don’t even apply to humans (especially in the case of chatbots).
+							From there I decided it may be best to use an API, but it was difficult to make most text-generation APIs
+							generate mean comments (for good reason). The best I could do was
+							<a href='https://huggingface.co/CommunityLM/republican-twitter-gpt2?text=Once+upon+a+time%2C'>this API</a>
+							that was fine-tuned using Republican tweets. It doesn’t always do a great job but there have definitely been
+							some stand-out moments with what it generates, for example:
+							<br>
+							<br>
+							“You are so stupid, you must be so ignorant because we
+							live in the land of the free!! What about the 70th amendment which allows a man to have 2 wives at once? That was
+							about equal opportunity for all!! I”
+							<br>
+							<br>
+							From there my direction changed and I decided upon a more content-moderation-themed approach.
+							When combined with a basic sentiment API I could both generate (mostly) negative tweets and decide
+							how negative they appeared to be. This became the framework for the current version of this website,
+							which aims to make the viewer think about how comments are moderated on massive sites, and what keywords
+							or general red flags an API may be looking for. There are times when a very negative comment receives a
+							low score due to the language that is used, and times when a relatively positive comment receives a very
+							high negativity rating. The sentiment API is not entirely representative of what a moderation API would be
+							looking for, as they are also looking for spam comments and bots in most cases, but it is a basic case of
+							how automated moderation works.
+						</p>
 					</div>
 				</div>
 			</div>

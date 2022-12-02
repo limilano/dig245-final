@@ -16,7 +16,7 @@
 }
 
 .col {
-  padding: 1% 0;
+  padding: 2% 0;
 }
 
 .row {
@@ -37,7 +37,7 @@
 
 .TwtBlue {
   color: #55ACEF;
-  font-size: 45px;
+  font-size: 4vw;
   padding: 0 2%;
   border: solid #E7ECF0 1px;
   border-radius: 30px;
@@ -52,6 +52,19 @@
   text-align: center;
   color: white;
   padding: 1.5% 0;
+}
+
+h2 {
+  font-size: 3vw;
+}
+
+p{
+  font-size: 1.5vw;
+  margin:0;
+}
+
+h4 {
+  font-size: 1.6vw;
 }
 
 .mainBody {
@@ -69,7 +82,7 @@
 
 .screenname {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.6vw;
   vertical-align: top;
 }
 
@@ -77,9 +90,6 @@
   padding-top:0px;
 }
 
-.tweet {
-  padding-top: 1%;
-}
 
 div.metrics {
     display: table;
