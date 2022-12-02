@@ -25,10 +25,7 @@
 
 .gray {
   color: #61666C;
-  font-weight: bold;
-  font-size: 20px;
-  vertical-align: top;
-  padding-left: 2%;
+  padding: 0 2%;
 }
 
 .center {
@@ -82,8 +79,8 @@ h4 {
 
 .screenname {
   font-weight: bold;
-  font-size: 1.6vw;
   vertical-align: top;
+  font-size: 1.6vw;
 }
 
 #tweetHeader {
