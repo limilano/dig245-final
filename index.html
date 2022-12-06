@@ -13,6 +13,9 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<script src="https://kit.fontawesome.com/cd0b0889e9.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+	<style> @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,300&display=swap'); </style>
+
 	<title>Social Mediator</title>
 
 
@@ -29,7 +32,7 @@
 			<div class="col col-6 align-self-center">
 				<p>What's the difference between a human's perception of comments made online versus
 					an API's? Below you will be able to rate the negativity of tweets and your rating will be compared to an API's, from
-					there you can decide whether or not you would delete this tweet and see what the API would do.</p>
+					there you can decide whether or not you would remove this tweet and see what the API would do.</p>
 			</div>
 		</div>
 
@@ -53,6 +56,8 @@
 			</div>
 		</div>
 
+
+
 		<div class="row justify-content-center" id="inputsAll">
 			<div class="col col-6 align-self-center">
 				<div class="center">
@@ -69,12 +74,24 @@
 				<p class="responses" id="responseText" style="display:none"></p>
 
 				<div id="form2" style="display:none" class="metrics">
-					<span><button type="button" class="btn btn-success btn-block textFixer" id="keepBtn">Keep</button></span>
-					<span><button type="button" class="btn btn-danger btn-block textFixer" id="deleteBtn">Delete</button></span>
+					<span><button type="button" class="btn btn-success btn-block textFixer" id="keepBtn">Approve</button></span>
+					<span><button type="button" class="btn btn-danger btn-block textFixer" id="deleteBtn">Remove</button></span>
 				</div>
 
 				<div class="center">
 					<button class="btn btn-primary textFixer" id="newComment" style="display:none">next</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col col-6 align-self-center">
+				<div class="">
+					<p>API accuracy score:<p>
+					<p id="accuracy">0</p>
+					<br>
+					<p>The API's score increases if it's negativity score is close to your perceived negativity rating,
+					the higher the score it gets the better it is at determining how negative a tweet is.</p>
 				</div>
 			</div>
 		</div>

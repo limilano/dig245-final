@@ -16,6 +16,7 @@ const selectedComments = [`@USER You should be ashamed of your performance. A ch
 let comment;
 let score;
 let inputNegativity;
+let accuracy = 0;
 
 
 async function query(data) {
@@ -34,7 +35,7 @@ async function query(data) {
 
   if(response.ok) {
     comment = comment[0].generated_text;
-    console.log('ok');
+    // console.log('ok');
   } else {
     comment = selectedComments[Math.floor(Math.random() * selectedComments.length)];
   }
@@ -61,7 +62,7 @@ async function rate(data) {
 
   let rating = await response.json();
   rating = Math.round(rating[0][0].score * 100);
-  console.log(rating);
+  // console.log(rating);
   return rating;
 }
 
@@ -86,24 +87,30 @@ $(document).ready(function() {
 $("#form1").submit(function(e) {
   e.preventDefault();
   inputNegativity = $("#negativityInput").val();
-  console.log(inputNegativity);
+  // console.log(inputNegativity);
 
   $("#form1").hide();
   $("#responseText").show();
   $("#responseText").text("The API gave this tweet a negativity score of " + score + ", which has a difference of " +
-  (Math.abs(score-inputNegativity)) + " from your perceived negativity. You have the choice to keep or delete this tweet:");
+  (Math.abs(score-inputNegativity)) + " from your perceived negativity. You have the choice to approve or remove this tweet:");
   $("#form2").show();
+
+  if (Math.abs(score-inputNegativity) < 10) {
+    accuracy++;
+    $("#accuracy").text(accuracy);
+  }
+
 });
 
 $("#keepBtn").click(async function() {
   $("#form2").hide();
-  console.log("keep");
+  // console.log("keep");
 
   if(score > 80) {
-    $("#responseText").text(`While you have decided to keep this tweet, the API would have flagged this tweet for review
+    $("#responseText").text(`While you have decided to approve this tweet, the API would have flagged this tweet for review
     and potential deletion.`);
   } else {
-    $("#responseText").text(`You have decided to keep this tweet, the API has also determined that this tweet
+    $("#responseText").text(`You have decided to approve this tweet, the API has also determined that this tweet
       does not contain highly negative sentiment.`);
   }
 
@@ -112,13 +119,13 @@ $("#keepBtn").click(async function() {
 
 $("#deleteBtn").click(async function() {
   $("#form2").hide();
-  console.log("delete");
+  // console.log("delete");
 
   if(score < 80) {
-    $("#responseText").text(`While you have decided to delete this tweet, the API would not have flagged this particular tweet,
+    $("#responseText").text(`While you have decided to remove this tweet, the API would not have flagged this particular tweet,
       though it may have incorrectly assessed the sentiment.`);
   } else {
-    $("#responseText").text(`You have decided to delete this tweet, the API has also determined that this tweet
+    $("#responseText").text(`You have decided to remove this tweet, the API has also determined that this tweet
        contains highly negative sentiment.`);
   }
 

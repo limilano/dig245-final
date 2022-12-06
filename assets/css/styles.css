@@ -1,12 +1,7 @@
-
 /* css */
-@font-face {
-    font-family: GTamerica;
-    src: url("assets/img/GT America Regular.ttf");
-}
 
 * {
-  font-family: GTamerica;
+  font-family: 'Ubuntu', sans-serif;;
 }
 
 .container-fluid {
@@ -56,7 +51,7 @@ h2 {
 }
 
 p, .textFixer{
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   margin:0;
 }
 
